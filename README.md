@@ -9,3 +9,5 @@ This project is a practice exercise focused on building an interactive Etch-a-Sk
 - Enhancing user experience with styling and hover effects
 
 This project serves as a fun and interactive way to practice JavaScript and DOM manipulation while reinforcing fundamental web development skills.
+
+View site [here](https://qeuif.github.io/odin-etch-a-sketch/)
