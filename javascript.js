@@ -30,7 +30,15 @@ adjust.addEventListener("click", () => {
 });
 
 function colourGrid(div) {
-    div.style.backgroundColor = "blue";
+    let isChecked = document.getElementById("random-colour").checked;
+    if (!isChecked) {
+        div.style.backgroundColor = "blue";
+    } else {
+        let red = getRandomIntInclusive(0, 255);
+        let green = getRandomIntInclusive(0, 255);
+        let blue = getRandomIntInclusive(0, 255);
+        div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
 }
 
 function resetGrid(div) {
@@ -61,4 +69,10 @@ function removeGrid() {
     for (let grid of gridList) {
         grid.remove();
     }
+}
+
+function getRandomIntInclusive(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }

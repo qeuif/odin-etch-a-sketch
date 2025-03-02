@@ -12,8 +12,20 @@
     <div class="header">Etch A Sketch</div>
     <div class="buttons">
         <button class="clear">Clear</button>
-        <button class="resize">Adjust Grid</button>
+        <button class="resize" onclick="resizeGrid()">Adjust Grid</button>
     </div>
+    <fieldset>
+        <legend>Other Features</legend>
+        <div class="randomColour">
+            <input type="checkbox" id="random-colour" name="feature">
+            <label for="random-colour">Random Coloured Squares</label>
+        </div>
+
+        <div class="darkeningEffect">
+            <input type="checkbox" id="darken" name="feature">
+            <label for="darken">Darkening Effect</label>
+        </div>
+    </fieldset>
     <div class="container"></div>
 </body>
 </html>
