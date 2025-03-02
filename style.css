@@ -3,3 +3,14 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.buttons {
+    margin: 5px;
+}
+
+.otherFeatures {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 10px;
+}

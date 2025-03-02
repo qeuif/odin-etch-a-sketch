@@ -21,7 +21,6 @@ resetButton.addEventListener("click", (event) => {
 
 const adjust = document.querySelector(".resize");
 adjust.addEventListener("click", () => {
-    totalDivs = prompt("Change number of squares per side (Enter a number between 4 and 100 inclusive):");
     while (totalDivs < 2 || totalDivs > 100) {
         totalDivs = prompt("Change number of squares per side (Enter a number between 2 and 100 inclusive):");
     }
@@ -29,10 +28,12 @@ adjust.addEventListener("click", () => {
     drawGrid(totalDivs);
 });
 
+
+
 function colourGrid(div) {
-    let isChecked = document.getElementById("random-colour").checked;
-    if (!isChecked) {
-        div.style.backgroundColor = "blue";
+    let isRandomColourChecked = document.getElementById("random-colour").checked;
+    if (!isRandomColourChecked) {
+        div.style.backgroundColor = "rgb(0, 0, 255)";
     } else {
         let red = getRandomIntInclusive(0, 255);
         let green = getRandomIntInclusive(0, 255);
@@ -75,4 +76,19 @@ function getRandomIntInclusive(min, max) {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+}
+
+function drawDarkeningGrid(totalDivs) {
+    for (let i = 0; i < totalDivs * totalDivs; i++) {
+        const div = document.createElement("div");
+        div.classList.add("grid");
+        div.style.width = `${divLength}px`;
+        div.style.height = `${divLength}px`;
+        div.style.border = `${BORDER_SIZE}px dotted gray`;
+        div.style.opacity = "20%";
+        div.addEventListener("mouseenter", (event) => {
+            colourGrid(div);
+        });
+        container.appendChild(div);
+    }
 }
