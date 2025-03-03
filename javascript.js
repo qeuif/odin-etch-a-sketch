@@ -22,7 +22,7 @@ resetButton.addEventListener("click", (event) => {
 const adjust = document.querySelector(".resize");
 adjust.addEventListener("click", () => {
     while (totalDivs < 2 || totalDivs > 100) {
-        totalDivs = prompt("Change number of squares per side (Enter a number between 2 and 100 inclusive):");
+        totalDivs = prompt("Change number of squares per side (Enter a number between 2 and 100 both inclusive):");
     }
     removeGrid();
     drawGrid(totalDivs);
@@ -47,7 +47,7 @@ function resetGrid(div) {
 }
 
 function resizeGrid() {
-    totalDivs = prompt("Change number of squares per side (Enter a number between 4 and 100 inclusive):");
+    totalDivs = prompt("Change number of squares per side (Enter a number between 2 and 100 both inclusive):");
 }
 
 function drawGrid(totalDivs) {
